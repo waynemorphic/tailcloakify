@@ -4,6 +4,7 @@ import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
+import { placeholderTextFromMsg } from "../placeholderTextFromMsg.ts";
 
 export default function LoginUsername(props: PageProps<Extract<KcContext, { pageId: "login-username.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
@@ -87,7 +88,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                         >
                             {!usernameHidden && (
                                 <div className={kcClsx("kcFormGroupClass")}>
-                                    <label htmlFor="username" className={kcClsx("kcLabelClass")}>
+                                    <label htmlFor="username" className={clsx(kcClsx("kcLabelClass"), "sr-only")}>
                                         {!realm.loginWithEmailAllowed
                                             ? msg("username")
                                             : !realm.registrationEmailAsUsername
@@ -95,6 +96,13 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                               : msg("email")}
                                     </label>
                                     <input
+                                        placeholder={
+                                            !realm.loginWithEmailAllowed
+                                                ? placeholderTextFromMsg(msg("username"))
+                                                : !realm.registrationEmailAsUsername
+                                                  ? placeholderTextFromMsg(msg("usernameOrEmail"))
+                                                  : placeholderTextFromMsg(msg("email"))
+                                        }
                                         tabIndex={2}
                                         id="username"
                                         className={clsx(
