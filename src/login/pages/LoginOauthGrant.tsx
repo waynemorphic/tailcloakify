@@ -87,10 +87,10 @@ export default function LoginOauthGrant(
                         </div>
 
                         <div id="kc-form-buttons">
-                            <div className={clsx(kcClsx("kcFormButtonsWrapperClass"), "grid grid-cols-2")}>
+                            <div className={clsx(kcClsx("kcFormButtonsWrapperClass"), "grid grid-cols-2 gap-10")}>
                                 <input
                                     className={
-                                        "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm w-1/2 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                                     }
                                     name="accept"
                                     id="kc-login"
@@ -99,7 +99,7 @@ export default function LoginOauthGrant(
                                 />
                                 <input
                                     className={
-                                        "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm flex w-1/2 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                                     }
                                     name="cancel"
                                     id="kc-cancel"

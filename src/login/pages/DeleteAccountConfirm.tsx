@@ -45,11 +45,11 @@ export default function DeleteAccountConfirm(
                     <li>{msg("errasingData")}</li>
                 </ul>
                 <p className="delete-account-text">{msg("finalDeletionConfirmation")}</p>
-                <div id="kc-form-buttons" className={"grid grid-cols-2"}>
+                <div id="kc-form-buttons" className={"grid grid-cols-2 gap-10"}>
                     <input
                         className={clsx(
                             kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonLargeClass"),
-                            "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                            "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                         )}
                         type="submit"
                         value={msgStr("doConfirmDelete")}
@@ -57,7 +57,7 @@ export default function DeleteAccountConfirm(
                     {triggered_from_aia && (
                         <button
                             className={
-                                "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm flex max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2 ml-10"
+                                "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
                             }
                             type="submit"
                             name="cancel-aia"
