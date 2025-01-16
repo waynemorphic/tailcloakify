@@ -26,6 +26,9 @@ const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
 const LoginIdpLinkConfirm = lazy(() => import("./pages/LoginIdpLinkConfirm"));
 const LoginIdpLinkEmail = lazy(() => import("./pages/LoginIdpLinkEmail"));
 const LoginOauthGrant = lazy(() => import("./pages/LoginOauthGrant"));
+const LoginRecoveryAuthnCodeConfig = lazy(
+    () => import("./pages/LoginRecoveryAuthnCodeConfig")
+);
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -121,6 +124,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-oauth-grant.ftl":
                         return (
                             <LoginOauthGrant
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-recovery-authn-code-config.ftl":
+                        return (
+                            <LoginRecoveryAuthnCodeConfig
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
