@@ -37,6 +37,9 @@ const LogoutConfirm = lazy(() => import("./pages/LogoutConfirm"));
 const LoginOauth2DeviceVerifyUserCode = lazy(
     () => import("./pages/LoginOauth2DeviceVerifyUserCode")
 );
+const LoginIdpLinkConfirmOverride = lazy(
+    () => import("./pages/LoginIdpLinkConfirmOverride")
+);
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -172,6 +175,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-oauth2-device-verify-user-code.ftl":
                         return (
                             <LoginOauth2DeviceVerifyUserCode
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-idp-link-confirm-override.ftl":
+                        return (
+                            <LoginIdpLinkConfirmOverride
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
