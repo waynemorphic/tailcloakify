@@ -34,6 +34,9 @@ const LoginRecoveryAuthnCodeInput = lazy(
 );
 const LoginX509Info = lazy(() => import("./pages/LoginX509Info"));
 const LogoutConfirm = lazy(() => import("./pages/LogoutConfirm"));
+const LoginOauth2DeviceVerifyUserCode = lazy(
+    () => import("./pages/LoginOauth2DeviceVerifyUserCode")
+);
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -161,6 +164,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "logout-confirm.ftl":
                         return (
                             <LogoutConfirm
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-oauth2-device-verify-user-code.ftl":
+                        return (
+                            <LoginOauth2DeviceVerifyUserCode
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
