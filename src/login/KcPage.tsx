@@ -33,6 +33,7 @@ const LoginRecoveryAuthnCodeInput = lazy(
     () => import("./pages/LoginRecoveryAuthnCodeInput")
 );
 const LoginX509Info = lazy(() => import("./pages/LoginX509Info"));
+const LogoutConfirm = lazy(() => import("./pages/LogoutConfirm"));
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -152,6 +153,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-x509-info.ftl":
                         return (
                             <LoginX509Info
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "logout-confirm.ftl":
+                        return (
+                            <LogoutConfirm
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
