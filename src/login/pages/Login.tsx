@@ -7,6 +7,7 @@ import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import { placeholderTextFromMsg } from "../placeholderTextFromMsg.ts";
+import useProviderLogos from "../useProviderLogos";
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
@@ -21,6 +22,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
     const { msg, msgStr } = i18n;
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
+
+    const providerLogos = useProviderLogos();
 
     return (
         <Template
@@ -63,19 +66,34 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     <li key={p.alias}>
                                         <a
                                             id={`social-${p.alias}`}
-                                            className={clsx(
-                                                kcClsx("kcFormSocialAccountListButtonClass", providers.length > 3 && "kcFormSocialAccountGridItem"),
-                                                `border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-transparent`
-                                            )}
+
+                                            className={clsx(kcClsx(
+                                                "kcFormSocialAccountListButtonClass",
+                                                providers.length > 3 && "kcFormSocialAccountGridItem"
+                                            ), `border border-secondary-200 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`)}
                                             type="button"
                                             href={p.loginUrl}
                                         >
                                             <div className={"h-6 w-6"}>
-                                                {p.iconClasses && (
-                                                    <i
-                                                        className={clsx(kcClsx("kcCommonLogoIdP"), p.iconClasses, `text-provider-${p.alias}`)}
-                                                        aria-hidden="true"
-                                                    ></i>
+
+                                                {providerLogos[p.alias] ? (
+                                                    <img
+                                                        src={providerLogos[p.alias]}
+                                                        alt={`${p.displayName} logo`}
+                                                        className={"h-full w-auto"}
+                                                    />
+                                                ) : (
+                                                    // Fallback to the original iconClasses if the logo is not defined
+                                                    p.iconClasses && (
+                                                        <i
+                                                            className={clsx(
+                                                                kcClsx("kcCommonLogoIdP"),
+                                                                p.iconClasses,
+                                                                `text-provider-${p.alias}`
+                                                            )}
+                                                            aria-hidden="true"
+                                                        ></i>
+                                                    )
                                                 )}
                                             </div>
                                         </a>
@@ -207,8 +225,10 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 </div>
                             </div>
 
-                            <div id="kc-form-buttons" className={clsx(kcClsx("kcFormGroupClass"), "flex flex-col pt-4 space-y-2")}>
-                                <input type="hidden" id="id-hidden-input" name="credentialId" value={auth.selectedCredential} />
+                            <div id="kc-form-buttons"
+                                className={clsx(kcClsx("kcFormGroupClass"), "flex flex-col pt-4 space-y-2")}>
+                                <input type="hidden" id="id-hidden-input" name="credentialId"
+                                    value={auth.selectedCredential} />
                                 <input
                                     tabIndex={7}
                                     disabled={isLoginButtonDisabled}
