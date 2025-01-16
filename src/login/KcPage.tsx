@@ -40,6 +40,7 @@ const LoginOauth2DeviceVerifyUserCode = lazy(
 const LoginIdpLinkConfirmOverride = lazy(
     () => import("./pages/LoginIdpLinkConfirmOverride")
 );
+const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -183,6 +184,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-idp-link-confirm-override.ftl":
                         return (
                             <LoginIdpLinkConfirmOverride
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "delete-account-confirm.ftl":
+                        return (
+                            <DeleteAccountConfirm
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
