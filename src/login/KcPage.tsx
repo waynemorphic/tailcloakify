@@ -43,6 +43,7 @@ const LoginIdpLinkConfirmOverride = lazy(
 const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 const WebauthnError = lazy(() => import("./pages/WebauthnError"));
 const SelectAuthenticator = lazy(() => import("./pages/SelectAuthenticator"));
+const Error = lazy(() => import("./pages/Error"));
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -53,6 +54,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
+                    case "error.ftl":
+                        return (
+                            <Error
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     case "login.ftl":
                         return (
                             <Login
