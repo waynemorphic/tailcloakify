@@ -44,6 +44,7 @@ const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 const WebauthnError = lazy(() => import("./pages/WebauthnError"));
 const SelectAuthenticator = lazy(() => import("./pages/SelectAuthenticator"));
 const Error = lazy(() => import("./pages/Error"));
+const Terms = lazy(() => import("./pages/Terms"));
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -262,6 +263,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "select-authenticator.ftl":
                         return (
                             <SelectAuthenticator
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "terms.ftl":
+                        return (
+                            <Terms
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
