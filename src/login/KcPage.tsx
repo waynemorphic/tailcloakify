@@ -42,6 +42,7 @@ const LoginIdpLinkConfirmOverride = lazy(
 );
 const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 const WebauthnError = lazy(() => import("./pages/WebauthnError"));
+const SelectAuthenticator = lazy(() => import("./pages/SelectAuthenticator"));
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
@@ -244,6 +245,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "webauthn-register.ftl":
                         return (
                             <WebauthnRegister
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "select-authenticator.ftl":
+                        return (
+                            <SelectAuthenticator
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}
