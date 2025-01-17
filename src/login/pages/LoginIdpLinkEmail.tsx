@@ -30,15 +30,17 @@ export default function LoginIdpLinkEmail(
             <p id="instruction1" className="instruction">
                 {msg("emailLinkIdp1", idpAlias, brokerContext.username, realm.displayName)}
             </p>
+            <br />
             <p id="instruction2" className="instruction">
-                {msg("emailLinkIdp2")}{" "}
+                {msg("emailLinkIdp2")} <br />
                 <a href={url.loginAction} className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}>
                     {msg("doClickHere")}
                 </a>{" "}
                 {msg("emailLinkIdp3")}
             </p>
+            <br />
             <p id="instruction3" className="instruction">
-                {msg("emailLinkIdp4")}{" "}
+                {msg("emailLinkIdp4")} <br />
                 <a href={url.loginAction} className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}>
                     {msg("doClickHere")}
                 </a>{" "}
