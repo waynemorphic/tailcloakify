@@ -59,7 +59,7 @@ If you want to customize this theme, by extending it with your own files to be l
 3. Specify parent theme in [theme properties](https://www.keycloak.org/docs/latest/server_development/#theme-properties) and add additional files to be loaded in the header
 
 ```
-parent=keywind
+parent=tailcloakify
 scripts=first-script.js second-script.js
 styles=custom-styles.css
 meta=name==content name2=content2
@@ -113,7 +113,7 @@ Note that by default Keycloakify generates multiple `.jar` files for different v
 ## GitHub Actions
 
 Tailcloakify comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/releases/tag/v1.1.5).  
+the jars [as GitHub releases artifacts](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/releases/tag/v1.1.6).  
 To release a new version **just update the `package.json` version and push**.
 
 To enable the workflow go to your fork of this repository on GitHub then navigate to:
