@@ -26,6 +26,7 @@ Tailcloakify aims to provide support for all default login pages, which are curr
 We also support using the following plugins:
 
 - [ ] [keycloak-magic-link](https://github.com/p2-inc/keycloak-magic-link) ([#46](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/issues/46))
+- [X] [apple-identity-provider](https://github.com/klausbetz/apple-identity-provider-keycloak)
 
 ## Customizing the Theme
 
