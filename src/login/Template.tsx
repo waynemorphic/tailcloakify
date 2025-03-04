@@ -38,7 +38,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     // Load Favicon
     useEffect(() => {
-        const url: string | undefined = advancedMsgStr("faviconUrl") || kcContext.properties.TAILCLOAKIFY_FAVICON_URL;
+        const url: string | undefined =
+            (advancedMsgStr("faviconUrl") !== "faviconUrl" ? advancedMsgStr("faviconUrl") : null) || kcContext.properties.TAILCLOAKIFY_FAVICON_URL;
 
         if (url) {
             let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
