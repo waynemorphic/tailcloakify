@@ -14,7 +14,7 @@ export default function Invitations(props: PageProps<Extract<KcContext, { pageId
 
     const { msgStr } = i18n;
 
-    const { invitations } = kcContext;
+    const { invitations, url } = kcContext;
 
     return (
         <Template
@@ -31,7 +31,7 @@ export default function Invitations(props: PageProps<Extract<KcContext, { pageId
                 <div id="kc-terms-text">
                     You have been invited to join the following organizations. Uncheck those you wish to decline.
                 </div>
-                <form className="form-actions" action="${url.loginAction}" method="POST">
+                <form className="form-actions" action={url.loginAction} method="POST">
                     {invitations.orgs.map((org, index) => (
                         <div key={index} className="checkbox">
                             <label>

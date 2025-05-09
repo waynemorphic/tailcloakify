@@ -5,7 +5,6 @@ import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
 import Template from "./Template";
 import "./index.css";
-import Invitations from "./pages/p2-inc/keycloak-orgs/Invitations";
 
 const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 
@@ -61,6 +60,9 @@ const ViewEmail = lazy(
 );
 const ViewEmailContinuation = lazy(
     () => import("./pages/p2-inc/keycloak-magic-link/ViewEmailContinuation")
+);
+const Invitations = lazy(
+    () => import("./pages/p2-inc/keycloak-orgs/Invitations")
 );
 
 export default function KcPage(props: { kcContext: KcContext }) {
