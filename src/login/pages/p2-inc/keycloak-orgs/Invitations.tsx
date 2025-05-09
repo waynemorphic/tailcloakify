@@ -25,11 +25,11 @@ export default function Invitations(props: PageProps<Extract<KcContext, { pageId
             displayInfo={false}
             displayRequiredFields={false}
             displayMessage={false}
-            headerNode="Invitations"
+            headerNode={msgStr("p2incOrgsTitle")}
         >
             <div>
                 <div id="kc-terms-text">
-                    You have been invited to join the following organizations. Uncheck those you wish to decline.
+                    {msgStr("p2incOrgsText")}
                 </div>
                 <form className="form-actions" action={url.loginAction} method="POST">
                     {invitations.orgs.map((org, index) => (

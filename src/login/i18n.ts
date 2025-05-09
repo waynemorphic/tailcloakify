@@ -22,6 +22,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             multipleSessionsError:
                 "Multiple login sessions opened on same browser. Please close it and restart login.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Invitations",
+            p2incOrgsText: "You have been invited to join the following organizations. Uncheck those you wish to decline.",
             loginOtpOneTimeLabel: "Please Input your One-time code",
         },
         de: {
@@ -36,6 +38,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Anmeldeseite",
             multipleSessionsError: "Mehrere Anmeldesitzungen im selben Browser geöffnet. Bitte schließen Sie sie und starten Sie die Anmeldung neu.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Einladungen",
+            p2incOrgsText: "Sie wurden eingeladen, den folgenden Organisationen beizutreten. Deaktivieren Sie diejenigen, die Sie ablehnen möchten.",
             loginOtpOneTimeLabel: "Bitte geben Sie Ihren Einmalcode"
         },
         fr: {
@@ -50,6 +54,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Page de connexion",
             multipleSessionsError: "Plusieurs sessions de connexion ouvertes dans le même navigateur. Veuillez les fermer et relancer la connexion.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Invitations",
+            p2incOrgsText: "Vous avez été invité à rejoindre les organisations suivantes. Décochez celles que vous souhaitez refuser.",
             loginOtpOneTimeLabel: "Veuillez saisir votre Code à usage unique"
         },
         it: {
@@ -64,6 +70,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Pagina di accesso",
             multipleSessionsError: "Più sessioni di accesso aperte nello stesso browser. Si prega di chiuderle e riavviare l'accesso.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Inviti",
+            p2incOrgsText: "Sei stato invitato a unirti alle seguenti organizzazioni. Deseleziona quelle che desideri rifiutare.",
             loginOtpOneTimeLabel: "Si prega di inserire il tuo one-time password"
         },
         es: {
@@ -78,6 +86,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Página de inicio de sesión",
             multipleSessionsError: "Múltiples sesiones de inicio de sesión abiertas en el mismo navegador. Por favor, ciérrelas y reinicie el inicio de sesión.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Invitaciones",
+            p2incOrgsText: "Has sido invitado a unirte a las siguientes organizaciones. Desmarca aquellas que deseas rechazar.",
             loginOtpOneTimeLabel: "Por favor ingrese su Código de un solo uso"
         },
         cs: {
@@ -92,6 +102,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Přihlašovací stránka",
             multipleSessionsError: "Více přihlašovacích relací otevřeno ve stejném prohlížeči. Zavřete je prosím a restartujte přihlášení.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Pozvánky",
+            p2incOrgsText: "Byli jste pozváni k připojení k následujícím organizacím. Zrušte výběr těch, které chcete odmítnout.",
             loginOtpOneTimeLabel: "Zadejte prosím svůj jednorázový kód"
         },
         nl: {
@@ -106,6 +118,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Loginpagina",
             multipleSessionsError: "Meerdere loginsessies geopend in dezelfde browser. Sluit deze en start de login opnieuw.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Uitnodigingen",
+            p2incOrgsText: "U bent uitgenodigd om lid te worden van de volgende organisaties. Vink degenen die u wilt weigeren uit.",
             loginOtpOneTimeLabel: "Voer uw eenmalige code in"
         },
         pl: {
@@ -120,6 +134,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Strona logowania",
             multipleSessionsError: "W tej samej przeglądarce otwarto wiele sesji logowania. Zamknij je i uruchom ponownie logowanie.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Zaproszenia",
+            p2incOrgsText: "Otrzymałeś zaproszenie do dołączenia do następujących organizacji. Odznacz te, które chcesz odrzucić.",
             loginOtpOneTimeLabel: "Proszę wpisać kod jednorazowy"
         },
         ru: {
@@ -134,6 +150,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Страница входа",
             multipleSessionsError: "Несколько сеансов входа открыты в одном браузере. Закройте их и перезапустите вход.",
             p2incMagicLinkOtpFormTitle: "Email OTP",
+            p2incOrgsTitle: "Приглашения",
+            p2incOrgsText: "Вы были приглашены присоединиться к следующим организациям. Снимите отметку с тех, от которых вы хотите отказаться.",
             loginOtpOneTimeLabel: "Пожалуйста, введите свой одноразовый код"
         },
         sv: {
@@ -148,6 +166,8 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginPage: "Inloggningssida",
             multipleSessionsError: "Flera inloggningssessioner öppnade i samma webbläsare. Stäng dem och starta om inloggningen.",
             p2incMagicLinkOtpFormTitle: "E-post OTP",
+            p2incOrgsTitle: "Inbjudningar",
+            p2incOrgsText: "Du har blivit inbjuden att gå med i följande organisationer. Avmarkera de du vill avböja.",
             loginOtpOneTimeLabel: "Vänligen ange din engångskod"
         }
     })
