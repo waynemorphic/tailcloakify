@@ -27,6 +27,7 @@ We also support using the following plugins:
 
 - [X] [apple-identity-provider](https://github.com/klausbetz/apple-identity-provider-keycloak)
 - [X] [keycloak-magic-link](https://github.com/p2-inc/keycloak-magic-link)
+- [X] [keycloak-orgs](https://github.com/p2-inc/keycloak-orgs)
 
 ## Customizing the Theme
 
@@ -122,7 +123,7 @@ Note that by default Keycloakify generates multiple `.jar` files for different v
 ## GitHub Actions
 
 Tailcloakify comes with a generic GitHub Actions workflow that builds the theme and publishes
-the jars [as GitHub releases artifacts](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/releases/tag/v1.1.9).  
+the jars [as GitHub releases artifacts](https://github.com/ALMiG-Kompressoren-GmbH/tailcloakify/releases/tag/v1.1.10-prerelease).  
 To release a new version **just update the `package.json` version and push**.
 
 To enable the workflow go to your fork of this repository on GitHub then navigate to:
