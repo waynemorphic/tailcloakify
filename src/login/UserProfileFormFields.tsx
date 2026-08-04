@@ -41,6 +41,35 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
             valuesByFieldName[key] = searchParams.getAll(key).filter(value => value !== "");
         }
 
+        const rawLoginHint = searchParams.get("login_hint");
+
+        if (rawLoginHint !== null) {
+            try {
+                const parsed = JSON.parse(rawLoginHint);
+
+                if (typeof parsed === "object" && parsed !== null && !Array.isArray(parsed)) {
+                    for (const [key, value] of Object.entries(parsed)) {
+                        if (typeof value === "string" && value.trim() !== "") {
+                            valuesByFieldName[key] = [value];
+                        }
+
+                        if (Array.isArray(value)) {
+                            const values = value.filter(item => typeof item === "string" && item.trim() !== "") as string[];
+
+                            if (values.length !== 0) {
+                                valuesByFieldName[key] = values;
+                            }
+                        }
+                    }
+
+                    // Avoid using serialized JSON as username/email alias fallback.
+                    delete valuesByFieldName.login_hint;
+                }
+            } catch {
+                // Non-JSON login_hint remains supported as alias for username/email.
+            }
+        }
+
         return valuesByFieldName;
     }, [isRegistrationUrlPrefillEnabled]);
 

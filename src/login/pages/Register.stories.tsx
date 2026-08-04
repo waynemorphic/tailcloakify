@@ -340,7 +340,9 @@ export const WithSocialProviders: Story = {
 
 export const WithRegistrationUrlPrefillSnakeCase: Story = {
     render: () => {
-        setStoryUrlQuery("first_name=Max&last_name=Mustermann&email=max%40example.com&login_hint=max-user");
+        setStoryUrlQuery(
+            "login_hint=%7B%22first_name%22%3A%22Max%22%2C%22last_name%22%3A%22Mustermann%22%2C%22email%22%3A%22max%40example.com%22%2C%22username%22%3A%22max-user%22%7D"
+        );
 
         return (
             <KcPageStory
@@ -367,7 +369,9 @@ export const WithRegistrationUrlPrefillSnakeCase: Story = {
 
 export const WithRegistrationUrlPrefillDoesNotOverrideExistingValues: Story = {
     render: () => {
-        setStoryUrlQuery("first_name=Max&last_name=Mustermann&email=max%40example.com&login_hint=max-user");
+        setStoryUrlQuery(
+            "login_hint=%7B%22first_name%22%3A%22Max%22%2C%22last_name%22%3A%22Mustermann%22%2C%22email%22%3A%22max%40example.com%22%2C%22username%22%3A%22max-user%22%7D"
+        );
 
         return (
             <KcPageStory

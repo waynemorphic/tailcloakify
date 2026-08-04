@@ -65,19 +65,22 @@ This feature is disabled by default and can be enabled with:
 
 `TAILCLOAKIFY_ENABLE_REGISTRATION_URL_PREFILL=TRUE`
 
-When enabled, the registration form reads query parameters in `snake_case` and prefills matching form fields.
+When enabled, the registration form reads values in `snake_case` and prefills matching form fields.
+
+Important: In real Keycloak flows, arbitrary query parameters are often removed during redirects. For reliable prefilling, pass data through `login_hint` as JSON.
 
 Example:
 
 ```
-https://id.example.com/realms/my-realm/protocol/openid-connect/registrations?first_name=Max&last_name=Mustermann&email=max@example.com
+https://id.example.com/realms/my-realm/protocol/openid-connect/registrations?login_hint=%7B%22first_name%22%3A%22Max%22%2C%22last_name%22%3A%22Mustermann%22%2C%22email%22%3A%22max%40example.com%22%7D
 ```
 
 Notes:
 
 -   Existing values from Keycloak are not overwritten.
 -   Password fields are never prefilled from URL parameters.
--   `login_hint` is accepted as alias for `username` and `email`.
+-   Plain `login_hint` is accepted as alias for `username` and `email`.
+-   Structured `login_hint` JSON can prefill any supported registration field.
 -   For custom fields, use the snake_case version of the field name in the URL.
 
 ## Keycloak localization feature
